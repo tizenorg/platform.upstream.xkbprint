@@ -1,3 +1,5 @@
+%bcond_with x
+
 Name:           xkbprint
 Version:        1.0.3
 Release:        1
@@ -11,6 +13,10 @@ BuildRequires:  pkg-config
 BuildRequires:  pkgconfig(x11)
 BuildRequires:  pkgconfig(xkbfile)
 BuildRequires:  pkgconfig(xorg-macros) >= 1.3
+
+%if !%{with x}
+ExclusiveArch:
+%endif
 
 %description
 xkbprint generates a printable or encapsulated PostScript description
